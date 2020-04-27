@@ -22,41 +22,43 @@
                 <input oninput='checkAgeRegex();' class="form-control" type="number" id="age" placeholder="Âge" required />
                 <p id="ageCheck"></p>
             </div>
-            <button type="submit" class="btn btn-primary">Valider</button>
-            
+            <button type="button" class="btn btn-primary">Valider</button>
         </form>
         <script>
             function checkNameRegex() {
                 var nameRegex = new RegExp("^[a-zA-Z0-9-]{3,16}$");
-                var name = document.getElementById('name').value;
-                if (nameRegex.test(name)) {
-                    document.getElementById('nameCheck').style.color = "green";
-                    document.getElementById('nameCheck').innerHTML = 'Nom valide';
+                var name = document.getElementById('name');
+                var nameCheck = document.getElementById('nameCheck');
+                if (nameRegex.test(name.value)) {
+                    nameCheck.style.color = 'green';
+                    nameCheck.innerHTML = 'Nom valide';
                 } else {
-                    document.getElementById('nameCheck').style.color = "red";
-                    document.getElementById('nameCheck').innerHTML = 'Nom non valide';
+                    nameCheck.style.color = 'red';
+                    nameCheck.innerHTML = 'Nom non valide';
                 }
             }
             function checkAgeRegex() {
                 var ageRegex = new RegExp("^\\d{1,2}$");
-                var age = document.getElementById('age').value;
-                if (ageRegex.test(age)) {
-                    document.getElementById('ageCheck').style.color = "green";
-                    document.getElementById('ageCheck').innerHTML = 'Âge valide';
+                var age = document.getElementById('age');
+                var ageCheck = document.getElementById('ageCheck');
+                if (ageRegex.test(age.value)) {
+                    ageCheck.style.color = 'green';
+                    ageCheck.innerHTML = 'Âge valide';
                 } else {
-                    document.getElementById('ageCheck').style.color = "red";
-                    document.getElementById('ageCheck').innerHTML = 'Âge non valide';
+                    ageCheck.style.color = 'red';
+                    ageCheck.innerHTML = 'Âge non valide';
                 }
             }
             function checkMailRegex() {
                 var mailRegex = new RegExp("^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$");
-                var mail = document.getElementById('mail').value;
-                if (mailRegex.test(mail)) {
-                    document.getElementById('mailCheck').style.color = "green";
-                    document.getElementById('mailCheck').innerHTML = 'Nom valide';
+                var mail = document.getElementById('mail');
+                var mailCheck = document.getElementById('mailCheck');
+                if (mailRegex.test(mail.value)) {
+                    mailCheck.style.color = 'green';
+                    mailCheck.innerHTML = 'Nom valide';
                 } else {
-                    document.getElementById('mailCheck').style.color = "red";
-                    document.getElementById('mailCheck').innerHTML = 'Nom non valide';
+                    mailCheck.style.color = 'red';
+                    mailCheck.innerHTML = 'Nom non valide';
                 }
             }
         </script>
